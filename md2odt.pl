@@ -4,6 +4,8 @@ use warnings;
 
 # ============= parameters =============
 
+my $wd="/home/bz/Dropbox/scripts/markdown-footnote";
+
 if (@ARGV == 0) {
 	die("please specify Markdown input file");
 }
@@ -13,8 +15,6 @@ my $outfile="output";
 
 my $outfile_xml="odt_gen/content.xml";
 my $header="header.xml";
-
-my $wd="/home/bz/Dropbox/scripts/markdown-footnote";
 
 # ============= do =============
 
@@ -85,8 +85,6 @@ while (<IN>) {
 		$listitem_to.=$listitem_from;
 		
 		print OUT "$listitem_to</text:p>\n</text:list-item>\n";
-		#print OUT "$listitem</text:p>\n</text:list-item>\n";
-
 	} else {
 		# exit list mode, if necessary
 
